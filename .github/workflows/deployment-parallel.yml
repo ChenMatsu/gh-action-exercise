@@ -1,4 +1,4 @@
-name: Deploy Project Sequential
+name: Deploy Project Parallel
 on: push
 jobs:
   lint:

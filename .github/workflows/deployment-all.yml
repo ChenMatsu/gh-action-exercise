@@ -1,4 +1,4 @@
-name: Deploy Project Parallel
+name: Deploy Project All
 on: push
 jobs:
   deploy:
