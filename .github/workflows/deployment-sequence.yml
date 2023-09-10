@@ -1,7 +1,6 @@
-name: Deploy Project
+name: Deploy Project Sequential
 on: push
 jobs:
-  
   lint:
     runs-on: ubuntu-22.04
     steps:
@@ -15,11 +14,19 @@ jobs:
     needs: lint
     runs-on: ubuntu-22.04
     steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
       - name: Test
         run: npm run test
   build:
     needs: test
     runs-on: ubuntu-22.04
     steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
       - name: Build 
         run: npm run build
